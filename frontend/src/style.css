@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #f8fafc;
+  background-color: #0f172a;
+  font-family: "IBM Plex Sans", "Segoe UI", "Noto Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}

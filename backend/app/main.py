@@ -1,0 +1,29 @@
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
+
+from fastapi import APIRouter, FastAPI
+from loguru import logger
+
+from app.core.config import get_settings
+from app.core.logging import configure_logging
+
+settings = get_settings()
+configure_logging(settings)
+
+@asynccontextmanager
+async def lifespan(_: FastAPI) -> AsyncIterator[None]:
+    logger.info("Starting backend in {env} mode", env=settings.app_env)
+    yield
+
+
+app = FastAPI(title="Model Paint MVP API", lifespan=lifespan)
+router = APIRouter()
+
+
+@router.get("/health")
+def health() -> dict[str, str]:
+    logger.info("Health endpoint called")
+    return {"status": "ok"}
+
+
+app.include_router(router)
