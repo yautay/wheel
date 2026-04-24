@@ -2,7 +2,7 @@
 type: debt
 priority: high
 created: 2026-04-23T16:53:59Z
-status: created
+status: implemented
 tags: [architecture, api, validation, schemas, pydantic, fastapi]
 keywords: [API contracts, validation, Pydantic, request schema, response schema, color payload, error model, OpenAPI]
 patterns: [schema separation, shared validation rules, error response model, color input union, contract-first API design]

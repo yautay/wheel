@@ -2,7 +2,7 @@
 type: debt
 priority: high
 created: 2026-04-23T16:53:59Z
-status: implemented
+status: reviewed
 tags: [mvp, scaffold, monorepo, backend, frontend, fastapi, vue]
 keywords: [workspace, backend, frontend, FastAPI, Vue 3, TypeScript, TailwindCSS, Alembic, SQLite, Loguru]
 patterns: [monorepo layout, backend bootstrap, frontend bootstrap, environment configuration, developer commands, logging setup]
