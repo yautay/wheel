@@ -4,6 +4,8 @@ from contextlib import asynccontextmanager
 from fastapi import APIRouter, FastAPI
 from loguru import logger
 
+from app.api.contracts import router as contract_router
+from app.api.errors import register_error_handlers
 from app.core.config import get_settings
 from app.core.logging import configure_logging
 
@@ -17,6 +19,7 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
 
 
 app = FastAPI(title="Model Paint MVP API", lifespan=lifespan)
+register_error_handlers(app)
 router = APIRouter()
 
 
@@ -27,3 +30,4 @@ def health() -> dict[str, str]:
 
 
 app.include_router(router)
+app.include_router(contract_router)
